@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Midnight Roast Coffee Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h2>Midnight Roast Coffee Co.</h2>
+                </div>
+                <nav class="nav">
+                    <ul class="nav-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">The Night is Long. The Flavor is Deeper.</h1>
+            <p class="hero-subtitle">Small-batch, single-origin beans roasted under the cloak of night.</p>
+            <button class="cta-btn">Discover the Blend</button>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+<section id="story" class="story">
+    <div class="container">
+        <div class="story-content">
+            <div class="story-text">
+                <h2>Where Time Stands Still</h2>
+                <p>At Midnight Roast Coffee Co., we believe the quiet hours of the night hold a special magic. While the world sleeps, our master roasters work their craft, coaxing out the deepest, most complex flavors from our single-origin beans.</p>
+                <p>Our midnight roasting process allows for precise temperature control and a slower, more deliberate development of flavor profiles. Each batch is carefully monitored as it transforms from raw green beans into the rich, aromatic coffee that defines our brand.</p>
+            </div>
+            <div class="story-image">
+                <img src="assets/images/Story page/Storypage_.jpg" alt="Midnight coffee roasting process" class="story-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Product Section with Animations & AI Features -->
+<section id="products" class="product">
+    <div class="container">
+        <h2 class="section-title">Our Premium Blends</h2>
+        
+<!-- AI Coffee Recommender - SIMPLE VERSION -->
+<div class="ai-recommender">
+    <div class="ai-header">
+        <i class="fas fa-robot"></i>
+        <h3>AI Coffee Matchmaker</h3>
+        <p>Discover your perfect blend based on your preferences</p>
+    </div>
+    
+    <!-- ONLY Question 1 is active by default -->
+    <div class="ai-questions">
+        <div class="question active" id="q1">
+            <p>What time of day do you usually drink coffee?</p>
+            <div class="options">
+                <button class="option-btn" onclick="selectOption(this, 'morning')">Morning</button>
+                <button class="option-btn" onclick="selectOption(this, 'afternoon')">Afternoon</button>
+                <button class="option-btn" onclick="selectOption(this, 'evening')">Evening</button>
+                <button class="option-btn" onclick="selectOption(this, 'night')">Late Night</button>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <p>What flavor profile do you prefer?</p>
+            <div class="options">
+                <button class="option-btn" onclick="selectOption(this, 'bold')">Bold & Intense</button>
+                <button class="option-btn" onclick="selectOption(this, 'smooth')">Smooth & Balanced</button>
+                <button class="option-btn" onclick="selectOption(this, 'fruity')">Fruity & Bright</button>
+                <button class="option-btn" onclick="selectOption(this, 'chocolate')">Chocolate & Nutty</button>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <p>How do you typically brew your coffee?</p>
+            <div class="options">
+                <button class="option-btn" onclick="selectOption(this, 'espresso')">Espresso Machine</button>
+                <button class="option-btn" onclick="selectOption(this, 'pourOver')">Pour Over</button>
+                <button class="option-btn" onclick="selectOption(this, 'frenchPress')">French Press</button>
+                <button class="option-btn" onclick="selectOption(this, 'drip')">Drip Machine</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="ai-result" id="aiResult">
+        <div class="result-content">
+            <h3>Your Perfect Match!</h3>
+            <div class="recommended-product" id="recommendedProduct">
+                <!-- AI recommendation will appear here -->
+            </div>
+            <button class="btn-primary" onclick="restartQuiz()">Try Again</button>
+        </div>
+    </div>
+    
+    <div class="ai-progress">
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill" style="width: 33%"></div>
+        </div>
+        <span class="progress-text">Step <span id="currentStep">1</span> of 3</span>
+    </div>
+</div>
+
+        <!-- Animated Product Cards -->
+        <div class="animated-products-grid">
+            <!-- Product 1 with Animation -->
+            <div class="animated-product-card" data-product="obsidian">
+                <div class="product-visual">
+                    <div class="coffee-animation">
+                        <div class="coffee-cup">
+                            <div class="cup"></div>
+                            <div class="liquid dark-roast"></div>
+                            <div class="steam">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flavor-bubbles">
+                        <span class="bubble chocolate">🍫</span>
+                        <span class="bubble smoke">💨</span>
+                        <span class="bubble fig">🍇</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Obsidian Blend</h3>
+                    <p class="product-description">Our signature dark roast with deep, complex flavors perfect for late nights.</p>
+                    <ul class="product-features">
+                        <li>
+                            <span class="feature-title">Origin:</span>
+                            <span class="feature-desc">Sumatra Mandheling</span>
+                        </li>
+                        <li>
+                            <span class="feature-title">Roast:</span>
+                            <span class="feature-desc">Dark</span>
+                        </li>
+                        <li>
+                            <span class="feature-title">Notes:</span>
+                            <span class="feature-desc">Dark Chocolate, Smoke, Fig</span>
+                        </li>
+                    </ul>
+                    <div class="product-price">$18.99</div>
+                    <div class="product-actions">
+                        <button class="btn-primary">See Tasting Notes</button>
+                        <button class="btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 with Animation -->
+            <div class="animated-product-card" data-product="velvet">
+                <div class="product-visual">
+                    <div class="coffee-animation">
+                        <div class="coffee-cup">
+                            <div class="cup"></div>
+                            <div class="liquid medium-roast"></div>
+                            <div class="steam">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flavor-bubbles">
+                        <span class="bubble blueberry">🫐</span>
+                        <span class="bubble caramel">🍯</span>
+                        <span class="bubble velvet">✨</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Midnight Velvet</h3>
+                    <p class="product-description">A smooth, velvety medium-dark roast with subtle sweetness.</p>
+                    <ul class="product-features">
+                        <li>
+                            <span class="feature-title">Origin:</span>
+                            <span class="feature-desc">Ethiopia Yirgacheffe</span>
+                        </li>
+                        <li>
+                            <span class="feature-title">Roast:</span>
+                            <span class="feature-desc">Medium-Dark</span>
+                        </li>
+                        <li>
+                            <span class="feature-title">Notes:</span>
+                            <span class="feature-desc">Blueberry, Caramel, Velvety Finish</span>
+                        </li>
+                    </ul>
+                    <div class="product-price">$19.99</div>
+                    <div class="product-actions">
+                        <button class="btn-primary">See Tasting Notes</button>
+                        <button class="btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 with Animation -->
+            <div class="animated-product-card" data-product="starlight">
+                <div class="product-visual">
+                    <div class="coffee-animation">
+                        <div class="coffee-cup">
+                            <div class="cup"></div>
+                            <div class="liquid light-roast"></div>
+                            <div class="steam">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flavor-bubbles">
+                        <span class="bubble citrus">🍊</span>
+                        <span class="bubble honey">🍯</span>
+                        <span class="bubble floral">🌼</span>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Starlight Reserve</h3>
+                    <p class="product-description">Limited edition single-origin with bright acidity and complex aromatics.</p>
+                    <ul class="product-features">
+                        <li>
+                            <span class="feature-title">Origin:</span>
+                            <span class="feature-desc">Colombia Huila</span>
+                        </li>
+                        <li>
+                            <span class="feature-title">Roast:</span>
+                            <span class="feature-desc">Light-Medium</span>
+                        </li>
+                        <li>
+                            <span class="feature-title">Notes:</span>
+                            <span class="feature-desc">Citrus, Honey, Floral</span>
+                        </li>
+                    </ul>
+                    <div class="product-price">$22.99</div>
+                    <div class="product-actions">
+                        <button class="btn-primary">See Tasting Notes</button>
+                        <button class="btn-secondary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <p class="testimonial-text">"The best post-dinner coffee I have ever tasted. Truly a ritual that completes my evenings. The depth of flavor is unmatched by any other brand."</p>
+                <p class="testimonial-author">- James R., Coffee Connoisseur</p>
+            </div>
+            <div class="trust-badges">
+                <div class="badge">
+                    <i class="fas fa-certificate"></i>
+                    <span>Small Batch Certified</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-seedling"></i>
+                    <span>100% Arabica</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Midnight Roast Coffee Co.</h3>
+                    <p>123 Moonlight Avenue<br>Seattle, WA 98101</p>
+                    <p>contact@midnightroast.com</p>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Stay Updated</h4>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button>Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Midnight Roast Coffee Co. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
