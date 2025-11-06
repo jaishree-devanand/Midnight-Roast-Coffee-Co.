@@ -15,7 +15,7 @@ A premium, responsive landing page for a fictional coffee brand featuring dark a
 
 ## 🚀 Live Demo
 
-[View Live Site](https://jaishree-devanand.github.io/midnight-roast-coffee/)
+[View Live Site](https://jaishree-devanand.github.io/Midnight-Roast-Coffee-Co./)
 
 ## 🛠️ Technologies Used
 
